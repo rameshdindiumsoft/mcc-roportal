@@ -14,11 +14,10 @@ import '../../Style/component/Typography.css';
 import '../../Style/component/StatusLabel.css';
 import AddIcon from '@mui/icons-material/Add';
 import '../../Style/component/AvatarStyle.css';
-// import MoreDropdown from '../Common/MoreDropdown';
 import CustomDialog from '../Common/CustomDialog';
 import { taskList } from './utils/contants'
 import { CustomCard, HeaderCell, Search, SearchIconWrapper, StyledInputBase } from './utils/style';
-import { AvatarFun, StatusTag } from './utils/action';
+import { AvatarFun, menuCloseHandle, menuHandle, StatusTag } from './utils/action';
 import ConfirmationAlert from './Component/ConfirmationAlert';
 import AddTask from './Component/AddTask';
 import ChangeStatusTask from './Component/ChangeStatusTask';
@@ -32,81 +31,21 @@ import { PopperPlacementType } from '@mui/material/Popper';
 import MarkClaimAlert from './Component/MarkClaimAlert';
 import EditTask from './Component/EditTask';
 import SuccessAlert from './Component/SuccessAlert';
+import { options } from './utils/contants';
 
-const options = [
-    'View Task',
-    'Edit Task',
-    'Reassign Task',
-    'Change Status',
-    'Mark claim submitted',
-    'Delete Task'
-];
 const Dashboard = () => {
-    const [openViewTaskDrawer, setOpenViewTaskdrawer] = React.useState(false);
-    const [openAddTaskDrawer, setOpendAddTaskrawer] = React.useState(false);
-    const [openEditTaskDrawer, setOpenEditTaskrawer] = React.useState(false);
-    const [openCommentDrawer, setCommentdrawer] = React.useState(false);
-    const [openReassignDrawer, setOpenReassigndrawer] = React.useState(false);
-    const [openchangeStatusDrawer, setOpenchangeStatuskdrawer] = React.useState(false);
-    const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-    const [open, setOpen] = React.useState(false);
-    const [placement, setPlacement] = React.useState<PopperPlacementType>();
-    const [openDeleteDialog, setDeleteDialog] = React.useState(false);
-    const [openMarkClaimDialog, setMarkClaimDialog] = React.useState(false);
-    const [openDeleteSuccessDialog, setDeleteSuccessDialog] = React.useState(false);
-    const [openMarkClaimSuccessDialog, setMarkClaimSuccessDialog] = React.useState(false);
+    const [ anchorEl, setAnchorEl ] = React.useState<HTMLButtonElement | null>(null);
+    const [ open, setOpen ] = React.useState(false);
+    const [ placement, setPlacement ] = React.useState<PopperPlacementType>();
+    const [ enbaleModel, setModel ] = React.useState<boolean>(false);
+    const [ enbaleModelKey, setModelkey ] = React.useState<string>('viewTask');
+    const [ enbaleDialog, setDialog ] = React.useState<boolean>(false);
 
-    const addTaskDialog = () => {
-        setOpendAddTaskrawer(!openAddTaskDrawer)
-    }
-    const editTaskDialog = () => {
-        setOpenEditTaskrawer(!openEditTaskDrawer)
-    }
-    const commentDialog = () => {
-        setCommentdrawer(!openCommentDrawer)
-    }
-    const viewTaskDialog = () => {
-        setOpenViewTaskdrawer(!openViewTaskDrawer)
-    }
-    const reassignDialog = () => {
-        setOpenReassigndrawer(!openReassignDrawer)
-    }
-    const changeStatusDialog = () => {
-        setOpenchangeStatuskdrawer(!openchangeStatusDrawer)
-    }
-    const deleteDialog = () => {
-        setDeleteDialog(!openDeleteDialog)
-    }
-    const markClaimDialog = () => {
-        setMarkClaimDialog(!openMarkClaimDialog)
-    }
-    const deleteSuccessDialog = () => {
-        setDeleteSuccessDialog(!openDeleteSuccessDialog);
-        setDeleteDialog(false);
-        setMarkClaimSuccessDialog(false)
-    }
-    const markClaimSuccessDialog = () => {
-        setMarkClaimSuccessDialog(!openMarkClaimSuccessDialog);
-        setMarkClaimDialog(false);
-        setDeleteSuccessDialog(false)
+    const menuHandleCloseClick = () => {
+        menuCloseHandle(setModel, setDialog, setModelkey)
     }
     const menuHandleClick = (key: string) => {
-        switch (key) {
-            case 'View Task':
-                return setOpenViewTaskdrawer(true);
-            case 'Edit Task':
-                return setOpenEditTaskrawer(true);
-            case 'Reassign Task':
-                return setOpenReassigndrawer(true);
-            case 'Change Status':
-                return setOpenchangeStatuskdrawer(true);
-            case 'Mark claim submitted':
-                return setMarkClaimDialog(true);
-            case 'Delete Task':
-                return setDeleteDialog(true);
-            default:
-                return setOpenViewTaskdrawer(true);
-        }
+        menuHandle(setModel, setDialog, setModelkey, key)
     }
     const handleClick =
         (newPlacement: PopperPlacementType) =>
@@ -129,7 +68,7 @@ const Dashboard = () => {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Button className='primary1-button' onClick={() => addTaskDialog()}>
+                    <Button className='primary1-button' onClick={() => menuHandleClick('addTask')}>
                         <AddIcon style={{ color: "white" }} />&nbsp;&nbsp;
                         <Typography className='typo-Roboto-Medium-primary2-14'>{`New Task`}</Typography>
                     </Button>
@@ -157,9 +96,9 @@ const Dashboard = () => {
                                 hover
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell size="small" className='typo-Roboto-Regoular-primary7-14' onClick={() => viewTaskDialog()}>{row.taskName}</TableCell>
-                                <TableCell size="small" className='typo-Roboto-Regoular-primary7-14' onClick={() => viewTaskDialog()}>{row.orgTin}</TableCell>
-                                <TableCell size="small" onClick={() => viewTaskDialog()}>
+                                <TableCell size="small" className='typo-Roboto-Regoular-primary7-14' onClick={() => menuHandleClick('viewTask')}>{row.taskName}</TableCell>
+                                <TableCell size="small" className='typo-Roboto-Regoular-primary7-14' onClick={() => menuHandleClick('viewTask')}>{row.orgTin}</TableCell>
+                                <TableCell size="small" onClick={() => menuHandleClick('viewTask')}>
                                     <AvatarFun name={row.auditor} showName={true} />
                                 </TableCell>
                                 <TableCell size="small" className='typo-Roboto-Regoular-primary7-14'>{row.startDate}</TableCell>
@@ -173,7 +112,7 @@ const Dashboard = () => {
                                     </Link>
                                 </TableCell>
                                 <TableCell size="small" align="center">
-                                    <IconButton onClick={() => commentDialog()}>
+                                    <IconButton onClick={() => menuHandleClick('comment')}>
                                         <img src={CommentIcon} alt="CommentIcon" />
                                     </IconButton>
                                 </TableCell>
@@ -187,8 +126,8 @@ const Dashboard = () => {
                                     <CustomPopper open={open} anchorEl={anchorEl} placement={placement}>
                                         {options.map((option) => (
                                             <>
-                                                <MenuItem  key={option} selected={option === 'Pyxis'} onClick={() => menuHandleClick(option)}>
-                                                    <Typography style={{ padding: "4px 0px 4px 0px" }} className='typo-Roboto-Regoular-primary57-14'> {option}</Typography>
+                                                <MenuItem  key={option.id} selected={option.label === 'Pyxis'} onClick={() => menuHandleClick(option.key)}>
+                                                    <Typography style={{ padding: "4px 0px 4px 0px" }} className='typo-Roboto-Regoular-primary57-14'> {option.label}</Typography>
                                                 </MenuItem >
                                             </>
                                         ))}
@@ -200,51 +139,22 @@ const Dashboard = () => {
                 </Table>
             </TableContainer>
             <RightSideDrawer
-                openDrawer={openViewTaskDrawer}
-                commentDialog={viewTaskDialog}
-                children={<ViewTask />}
-            />
-            <RightSideDrawer
-                openDrawer={openCommentDrawer}
-                commentDialog={commentDialog}
-                children={<Comment />}
-            />
-            <RightSideDrawer
-                openDrawer={openAddTaskDrawer}
-                commentDialog={addTaskDialog}
-                children={<Track />}
-            />
-            <RightSideDrawer
-                openDrawer={openReassignDrawer}
-                commentDialog={reassignDialog}
-                children={<ReassignTask />}
-            />
-            <RightSideDrawer
-                openDrawer={openchangeStatusDrawer}
-                commentDialog={changeStatusDialog}
-                children={<ChangeStatusTask />}
-            />
-            <RightSideDrawer
-                openDrawer={openAddTaskDrawer}
-                commentDialog={addTaskDialog}
-                children={<AddTask />}
-            />
-            <RightSideDrawer
-                openDrawer={openEditTaskDrawer}
-                commentDialog={editTaskDialog}
-                children={<EditTask />}
-            />
-            <CustomDialog open={openDeleteDialog}  handleClick={deleteDialog}>
-                <ConfirmationAlert conFirmOnClick={deleteSuccessDialog} primaryLable={"Are you sure you want to delete this task?"} secondaryLabel={"onces done. can’t be revoked"} />
-            </CustomDialog>
-            <CustomDialog open={openMarkClaimDialog} handleClick={markClaimDialog}>
-                <MarkClaimAlert conFirmOnClick={markClaimSuccessDialog} primaryLable={"Are you sure you want to mark claim submitted"} />
-            </CustomDialog>
-            <CustomDialog open={openMarkClaimSuccessDialog} handleClick={markClaimSuccessDialog}>
-                <SuccessAlert  conFirmOnClick={deleteSuccessDialog} primaryLable={"Claim is marked as submitted successfully"} />
-            </CustomDialog>
-            <CustomDialog open={openDeleteSuccessDialog}  handleClick={deleteSuccessDialog}>
-                <SuccessAlert conFirmOnClick={markClaimSuccessDialog} primaryLable={"Task is deleted Successfully"} />
+                openDrawer={enbaleModel}
+                commentDialog={menuHandleCloseClick}
+            >
+                {enbaleModelKey === "viewTask" &&<ViewTask />}
+                {enbaleModelKey === "editTask" &&<EditTask />}
+                {enbaleModelKey === "reassignTask" &&<ReassignTask />}
+                {enbaleModelKey === "changeStatus" &&<ChangeStatusTask />}
+                {enbaleModelKey === "addTask" &&<AddTask />}
+                {enbaleModelKey === "comment" &&<Comment />}
+                {enbaleModelKey === "track" &&<Track />}
+            </RightSideDrawer>
+            <CustomDialog open={enbaleDialog}  handleClick={menuHandleCloseClick}>
+                {enbaleModelKey === "deleteTask" &&<ConfirmationAlert conFirmOnClick={() =>menuHandleClick('successTask')} primaryLable={"Are you sure you want to delete this task?"} secondaryLabel={"onces done. can’t be revoked"} />}
+                {enbaleModelKey === "markClaimSubmitted" &&<MarkClaimAlert conFirmOnClick={() =>menuHandleClick('markSucess')} primaryLable={"Are you sure you want to mark claim submitted"} />}
+                {enbaleModelKey === "markSucess" &&<SuccessAlert  conFirmOnClick={menuHandleCloseClick} primaryLable={"Claim is marked as submitted successfully"} />}
+                {enbaleModelKey === "successTask" &&<SuccessAlert conFirmOnClick={menuHandleCloseClick} primaryLable={"Task is deleted Successfully"} />}
             </CustomDialog>
         </CustomCard>
         <div style={{ display: "flex", justifyContent: "end", alignItems: "end", marginTop: "20px" }}>
