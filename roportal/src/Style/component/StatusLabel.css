@@ -1,0 +1,162 @@
+@import url('../colors/colors.css');
+
+.transcription-completed{
+    /* UI Properties */
+    background: var(--primary32) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    margin-left: 8px;
+    width: fit-content;
+}
+.todo{
+    /* UI Properties */
+    background: var(--primary34) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    margin-left: 8px;
+    width: fit-content;
+}
+.in-progress{
+    /* UI Properties */
+    background: var(--primary36) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    margin-left: 8px;
+    width: fit-content;
+}
+.received{
+    /* UI Properties */
+    background: var(--primary28) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    margin-left: 8px;
+    width: fit-content;
+}
+.not-received{
+    /* UI Properties */
+    background: var(--primary30) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    margin-left: 8px;
+    width: fit-content;
+}
+.claim-submitted{
+    /* UI Properties */
+    background: var(--primary32) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    margin-left: 8px;
+    width: fit-content;
+}
+.primary-transcription-completed{
+    /* UI Properties */
+    background: var(--primary32) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    text-align: center !important;
+    width: 98px !important;
+    /* margin-left: 8px; */
+    width: fit-content;
+}
+.primary-todo{
+    /* UI Properties */
+    background: var(--primary34) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    text-align: center !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    width: 98px !important;
+    /* margin-left: 8px; */
+    width: fit-content;
+}
+.primary-in-progress{
+    /* UI Properties */
+    background: var(--primary36) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    width: 98px !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    /* margin-left: 8px; */
+    width: fit-content;
+}
+.primary-received{
+    /* UI Properties */
+    background: var(--primary28) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    width: 98px !important;
+    text-align: center !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    /* margin-left: 8px; */
+    width: fit-content;
+}
+.primary-not-received{
+    /* UI Properties */
+    background: var(--primary30) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    display: flex;
+    width: 98px !important;
+    text-align: center !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    /* margin-left: 8px; */
+    width: fit-content;
+    white-space: nowrap;
+
+}
+.primary-claim-submitted{
+    /* UI Properties */
+    background: var(--primary32) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    width: 98px !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    /* margin-left: 8px; */
+    width: fit-content;
+    white-space: nowrap;
+
+}

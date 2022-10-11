@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Logout" transform="translate(-164 -200)">
+    <g id="Component_1485_114" data-name="Component 1485 – 114" transform="translate(164 200)">
+      <rect id="Rectangle_8052" data-name="Rectangle 8052" width="32" height="32" rx="4" fill="#ffd0d9"/>
+      <g id="logout_1_" data-name="logout (1)" transform="translate(7.784 5.965)">
+        <path id="Path_9574" data-name="Path 9574" d="M9.185,19.221H2.3a2.3,2.3,0,0,1-2.3-2.3V3.146A2.3,2.3,0,0,1,2.3.85H9.185a.765.765,0,0,1,0,1.531H2.3a.767.767,0,0,0-.765.765V16.924a.766.766,0,0,0,.765.765H9.185a.766.766,0,0,1,0,1.531Z" fill="#e94362"/>
+        <path id="Path_9575" data-name="Path 9575" d="M180.051,236.269h-9.185a.765.765,0,0,1,0-1.531h9.185a.765.765,0,0,1,0,1.531Z" transform="translate(-163.976 -225.468)" fill="#e94362"/>
+        <path id="Path_9576" data-name="Path 9576" d="M340.959,117.864a.765.765,0,0,1-.537-1.31l4.1-4.048-4.1-4.048a.765.765,0,1,1,1.075-1.09l4.654,4.593a.765.765,0,0,1,0,1.09l-4.654,4.593A.762.762,0,0,1,340.959,117.864Z" transform="translate(-327.947 -102.47)" fill="#e94362"/>
+      </g>
+    </g>
+  </g>
+</svg>

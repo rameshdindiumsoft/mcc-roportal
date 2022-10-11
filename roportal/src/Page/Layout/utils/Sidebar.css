@@ -1,0 +1,53 @@
+.rootDiv{
+    padding: 41px  !important
+}
+.rootDivPrimary{
+    width: 64px !important;
+    height: 64px !important;
+    background: #C4549A 0% 0% no-repeat padding-box !important;
+    border: 1px solid #A0457F !important;
+    border-radius: 5px !important;
+    opacity: 1 !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.rootDivPrimary1{
+    padding-top: 29px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.rootDivPrimary2{ 
+    display: flex !important; 
+    flex-direction: row !important; 
+    align-items: center !important
+}
+.rootDivPrimary3{ 
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    width: fit-content !important
+}
+.rootDivPrimary4{ 
+    height: 300px !important; 
+    margin: 37px !important; 
+    gap: 38 !important
+}
+.iconBtn{ 
+    gap: 1 !important;
+    margin: 0px 0px 18px 0px !important;
+}
+.iconLogotBtn{ 
+    gap: 1 !important;
+    margin: 160px 0px 0px 0px !important;
+}
+.iconEditBtn{ 
+    margin-left: 18px !important
+}
+.iconTag{
+    overflow: initial !important;
+}
+.typoalign{
+    margin-left: 10px !important;
+}

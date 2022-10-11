@@ -1,0 +1,107 @@
+@import url(../colors/colors.css);
+
+.primary-button{
+    min-width: 104px !important;
+    height: 44px !important;
+    width: 104px !important;
+    /* UI Properties */
+    background: var(--primary10) 0% 0% no-repeat padding-box !important;
+    border-radius: 5px !important;
+    opacity: 1 !important;
+    text-transform: initial !important;
+}
+.primary1-button{
+    min-width: 171px !important;
+    width: 171px !important;
+    height: 44px !important;
+    /* UI Properties */
+    background: var(--primary10) 0% 0% no-repeat padding-box !important;
+    border-radius: 5px !important;
+    opacity: 1 !important;
+    text-transform: capitalize !important;
+}
+.secondary-button{
+    background: var(--primary2) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary50) !important;
+    border-radius: 16px !important;
+    align-self:end !important;
+    text-transform:initial !important;
+}
+.cancel-button{
+    width: 97px !important;
+    height: 40px !important;
+    /* UI Properties */
+    background: var(--primary2) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary59) !important;
+    border-radius: 5px !important;
+    opacity: 1;
+    align-self:end !important;
+    text-transform:initial !important;
+}
+.yes-button{
+    width: 97px !important;
+    height: 40px !important;
+    /* UI Properties */
+    background: var(--primary10) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary10) !important;
+    border-radius: 5px !important;
+    opacity: 1;
+    align-self:end !important;
+    text-transform:initial !important;
+}
+.list-button{
+    background: none !important;
+}
+.list-button .svgIcon path{
+    fill: #7C7C7C !important;
+}
+.list-button:hover .svgIcon path{
+    fill: #427BE0 !important;
+}
+.list-button .hocss{
+    color: #7C7C7C !important;
+}
+.list-button:hover .hocss{
+    color: #427BE0 !important;
+}
+
+.list-button:focus .svgIcon path{
+    fill: #427BE0 !important;
+}
+
+.list-button:focus .hocss{
+    color: #427BE0 !important;
+}
+.table-cell{
+    background: white !important;
+}
+.table-cell:hover {
+    background: #427BE0 !important;
+}
+.table-cell:focus{
+    background: #427BE0 !important;
+}
+.uploadButton{
+    height: 40px !important;
+    /* UI Properties */
+    background: #F5F5F5 0% 0% no-repeat padding-box !important;
+    box-shadow: none !important;
+    opacity: 1;
+    text-transform: initial !important;
+    width: fit-content !important;
+    width: 195px !important;
+    text-align: start !important;
+    justify-content: flex-start;
+    color: #7C7C7C !important;
+}
+.ok-button{
+    width: 97px !important;
+    height: 40px !important;
+    /* UI Properties */
+    background: var(--primary10) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary10) !important;
+    border-radius: 5px !important;
+    opacity: 1;
+    /* align-self:end !important; */
+    text-transform:initial !important;
+}

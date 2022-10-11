@@ -1,0 +1,62 @@
+.comment{
+    width: 402px;
+    min-height: 176px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box !important;
+    box-shadow: 0px 2px 4px #00000014 !important;
+    border: 1px solid #E3E3E3 !important;
+    border-radius: 8px !important;
+    opacity: 1;
+}
+.expand-card{
+    width: 354px;
+    height: 83px;
+    /* UI Properties */
+    background: #F7F8F9 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    opacity: 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.text-fd{
+    width: 319px;
+    height: 48px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 28px;
+    opacity: 1;
+}
+.btndiv{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    top: -15px;
+    left: 15px;
+    /* margin: -15px 0px 0px -73px; */
+}
+.cmtSendDiv{
+    height: 71px;
+/* UI Properties */
+background: #F7F8F9 0% 0% no-repeat padding-box;
+box-shadow: -4px 1px 8px #0000000F;
+opacity: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+padding: 8px;
+position: sticky;
+bottom: 0;
+}
+.cmtSendtextfd{
+    height: 55px;
+    width: 100%;
+    margin: 8px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 28px;
+opacity: 1;
+}

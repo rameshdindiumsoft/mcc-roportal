@@ -1,0 +1,32 @@
+.avatarP1{
+    width: 28px !important;
+    height: 28px !important;
+    /* UI Properties */
+    background: var(--primary38) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary40) !important;
+    opacity: 1;
+}
+.avatarP2{
+    width: 28px !important;
+    height: 28px !important;
+    /* UI Properties */
+    background: var(--primary41) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary42) !important;
+    opacity: 1;
+}
+.avatarP3{
+    width: 28px !important;
+    height: 28px !important;
+    /* UI Properties */
+    background: var(--primary45) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary46) !important;
+    opacity: 1;
+}
+.avatarP4{
+    width: 28px !important;
+    height: 28px !important;
+    /* UI Properties */
+    background: var(--primary43) 0% 0% no-repeat padding-box !important;
+    border: 1px solid var(--primary44) !important;
+    opacity: 1;
+}
