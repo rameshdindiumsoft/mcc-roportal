@@ -1,12 +1,7 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Popper, { PopperPlacementType } from '@mui/material/Popper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import Popper from '@mui/material/Popper';
 import Fade from '@mui/material/Fade';
 import Paper from '@mui/material/Paper';
-import { ReactComponent as IconMoreSharp} from '../../Assests/Icons/IconMoreSharp.svg';
-import { IconButton } from '@mui/material';
 
 type CustomPopperProps = {
     anchorEl: any,

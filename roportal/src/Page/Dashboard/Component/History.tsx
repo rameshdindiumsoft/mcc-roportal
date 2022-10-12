@@ -1,23 +1,7 @@
 import { Typography } from "@mui/material";
 import { AvatarFun } from "../utils/action";
 
-const col = [
-    {
-        id: 1,
-        lab: "Not Received",
-    },
-    {
-        id: 2,
-        lab: "Todo"
-    },
-    {
-        id: 3,
-        lab: "Received"
-    }
-]
 export const StatusFlag = (label: string) => {
-    // let labelData = col.find((item) => item.lab === label);
-
     return <Typography style={{color:"#212427"}}>{label}</Typography>
 }
 export default function History() {
