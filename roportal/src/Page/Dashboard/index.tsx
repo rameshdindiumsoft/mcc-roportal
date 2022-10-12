@@ -5,7 +5,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { Button, IconButton, Typography, Link, MenuItem, Divider } from '@mui/material';
+import { Button, IconButton, Typography, Link, MenuItem } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import RightSideDrawer from './Component/RightSideDrawer';
 import CommentIcon from '../../Assests/Icons/CommentIcon.svg';

@@ -10,7 +10,7 @@ import '../../Style/component/ButtonStyle.css';
 import './utils/Sidebar.css';
 
 export default function Sidebar() {
-
+	const currentPath = window.location.pathname;
 	return (
 		<div>
 			<div className='rootDiv'>
@@ -34,9 +34,9 @@ export default function Sidebar() {
 			</div>
 			<div className='rootDivPrimary4'>
 				{sideNavigation?.map((item) => (
-					<ListItemButton key={item.id} className='list-button iconBtn'>
+					<ListItemButton key={item.id} className={currentPath === item.path ?`buttonCurrent iconBtn`: `list-button iconBtn`}>
 						<Icon className='svgIcon iconTag'>{item.icon} </Icon>
-						<Typography className='typo-Roboto-Regoular-primary3-16-21lh hocss typoalign'>{item.label}</Typography>
+						<Typography className={currentPath === item.path ?`typo-Roboto-Regoular-primary10-16-21lh typoalign`:'typo-Roboto-Regoular-primary3-16-21lh hocss typoalign'}>{item.label}</Typography>
 					</ListItemButton>
 				))}
 				<ListItemButton className='list-button iconLogotBtn'>
