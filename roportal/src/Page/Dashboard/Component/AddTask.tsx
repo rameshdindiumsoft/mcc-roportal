@@ -31,11 +31,11 @@ const FORM_VALIDATION = Yup.object().shape({
 
 export default function AddTask() {
     const [status, setStatus] = React.useState(statusMenuItem[0].label);
-    const [statusFlag, setStatusFlag] = React.useState(false);
+    // const [statusFlag, setStatusFlag] = React.useState(false);
 
     const handleChange = (event: SelectChangeEvent) => {
         setStatus(event.target.value as string);
-        setStatusFlag(true)
+        // setStatusFlag(true)
     };
     return (<>
         <HeaderDiv>

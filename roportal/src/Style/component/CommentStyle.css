@@ -1,4 +1,4 @@
-.comment{
+.comment {
     width: 402px;
     min-height: 176px;
     /* UI Properties */
@@ -8,7 +8,8 @@
     border-radius: 8px !important;
     opacity: 1;
 }
-.expand-card{
+
+.expand-card {
     width: 354px;
     height: 83px;
     /* UI Properties */
@@ -19,7 +20,8 @@
     display: flex;
     justify-content: center;
 }
-.text-fd{
+
+.text-fd {
     width: 319px;
     height: 48px;
     /* UI Properties */
@@ -27,36 +29,39 @@
     border-radius: 28px;
     opacity: 1;
 }
-.btndiv{
+
+.btndiv {
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    align-items: end;
+    /* align-items: end; */
     top: -15px;
     left: 15px;
     /* margin: -15px 0px 0px -73px; */
 }
-.cmtSendDiv{
+
+.cmtSendDiv {
     height: 71px;
-/* UI Properties */
-background: #F7F8F9 0% 0% no-repeat padding-box;
-box-shadow: -4px 1px 8px #0000000F;
-opacity: 1;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-padding: 8px;
-bottom: 0;
-position: absolute;
+    /* UI Properties */
+    background: #F7F8F9 0% 0% no-repeat padding-box;
+    box-shadow: -4px 1px 8px #0000000F;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+    bottom: 0;
+    position: absolute;
 }
-.cmtSendtextfd{
+
+.cmtSendtextfd {
     height: 55px;
     width: 100%;
     margin: 8px;
-/* UI Properties */
-background: #FFFFFF 0% 0% no-repeat padding-box;
-border-radius: 28px;
-opacity: 1;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 28px;
+    opacity: 1;
 }
