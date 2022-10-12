@@ -2,9 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { IconButton, MenuItem, OutlinedInput, Typography } from '@mui/material';
+import { IconButton, OutlinedInput } from '@mui/material';
 import { ReactComponent as DownArrow } from '../../Assests/Icons/Down Arrow.svg';
-import { AvatarFun } from '../Dashboard/utils/action';
 
 type CustomeSelectProps = {
     value: string | undefined, 
@@ -29,15 +28,6 @@ export default function CustomeSelect({value, handleChange, children}:CustomeSel
                             <DownArrow />
                         </IconButton>
                     )}
-                    // renderValue={() => {
-                    //     return (<Typography style={{
-                    //         display:"flex",
-                    //         textAlign:"left",
-                    //         fontSize: "14px",
-                    //         color:"#7C7C7C",
-                    //         fontWeight:"lighter"
-                    //     }}>{!value && 'Select'}</Typography>)
-                    // }}
                     sx={{
                         height: "40px",
                         alignSelf: "end",
@@ -52,15 +42,6 @@ export default function CustomeSelect({value, handleChange, children}:CustomeSel
                     }}
                 >
                     {children}
-                    {/* {statusMenuItem?.map((item) => (
-                        <MenuItem sx={{
-                            padding:"8px"
-                        }} key={item.id} value={item.label}>
-                             <div className={item.divcss}>
-                                <StatusTypography className={item.typographycss}>{item.label}</StatusTypography>
-                            </div>
-                        </MenuItem>
-                    ))} */}
                 </Select>
             </FormControl>
         </Box>

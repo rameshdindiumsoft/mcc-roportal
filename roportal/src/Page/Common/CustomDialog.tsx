@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 
 export interface SimpleDialogProps {
   open: boolean;
-  onClose: (value: boolean) => void;
+  onClose: Function;
   children: React.ReactNode
 }
 
@@ -12,7 +12,7 @@ function SimpleDialog(props: SimpleDialogProps) {
   const { onClose, open, children } = props;
 
   return (
-    <Dialog onClose={onClose} open={open} sx={{
+    <Dialog onClose={() => onClose()} open={open} sx={{
       "& .MuiPaper-root":{
         overflow:"inherit"
       }
@@ -25,14 +25,14 @@ function SimpleDialog(props: SimpleDialogProps) {
 type customDialogProps = {
   children: React.ReactNode,
   open: boolean,
-  handleClick: (value: boolean) => void
+  handleClick: Function
 }
 export default function CustomDialog({ children, handleClick, open}: customDialogProps) {
   
   return (
       <SimpleDialog
         open={open}
-        onClose={handleClick}
+        onClose={() => handleClick()}
         children={children}
       />
   );

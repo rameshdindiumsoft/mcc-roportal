@@ -2,7 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { OutlinedInput } from '@mui/material';
 import { statusFullTagMenuItem } from '../Dashboard/utils/contants';
 
 type DropdownProps = {

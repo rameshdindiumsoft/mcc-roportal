@@ -58,6 +58,15 @@
 .list-button:hover .svgIcon path{
     fill: #427BE0 !important;
 }
+.list-button:active {
+    color: #427BE0 !important;
+}
+.list-button::selection{
+    color: #427BE0 !important;
+}
+.buttonCurrent{
+    color: #427BE0 !important;
+}
 .list-button .hocss{
     color: #7C7C7C !important;
 }

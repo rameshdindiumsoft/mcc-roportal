@@ -42,6 +42,13 @@
     letter-spacing: 0.32px !important;
     color: var(--primary3)  !important;
 }
+.typo-Roboto-Regoular-primary10-16-21lh {
+    font-family: RobotoNormal, sans-serif !important ;
+    font-size: 1rem !important;
+    line-height: 1.3125rem !important;
+    letter-spacing: 0.32px !important;
+    color: var(--primary10)  !important;
+}
 .typo-Roboto-Regoular-primary9-16-21lh {
     font-family: RobotoNormal, sans-serif !important ;
     font-size: 1rem !important;

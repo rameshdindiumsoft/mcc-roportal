@@ -2,11 +2,6 @@ import { Button, IconButton, ListItemButton, MenuItem, SelectChangeEvent, Typogr
 import { AddTaskRootDiv, ViewTaskFiledDiv, HeaderDiv, StatusTypography, FitDiv } from "../utils/style";
 import '../../../Style/component/Typography.css';
 import '../../../Style/component/ButtonStyle.css';
-// import CustomTextField from "../../Common/CustomTextField";
-import CustomeSelect from "../../Common/CustomeSelect";
-import CustomDatePicker from "../../Common/CustomDatePicker";
-import MoreDropdown from "../../Common/MoreDropdown";
-import Dropdown from "../../Common/Dropdown";
 import React from "react";
 import StatusDropdown from "../../Common/StatusDropdown";
 import { AvatarFun } from "../utils/action";
@@ -18,8 +13,6 @@ import EditTask from "./EditTask";
 
 export default function ViewTask() {
     const [status, setStatus] = React.useState(statusMenuItem[0].label);
-    const [statusObj, setStatusobj] = React.useState(statusMenuItem[0]);
-    const [statusFlag, setStatusFlag] = React.useState(false);
     const [trackStatusFlag, setTrackStatusFlag] = React.useState(false);
     const [openEditTaskDrawer, setOpenEditTaskrawer] = React.useState(false);
 
@@ -28,7 +21,6 @@ export default function ViewTask() {
     }
     const handleChange = (event: SelectChangeEvent) => {
         setStatus(event.target.value as string);
-        setStatusFlag(true)
     };
     const openTrackStatus = () => {
         setTrackStatusFlag(!trackStatusFlag)
@@ -57,9 +49,6 @@ export default function ViewTask() {
          {!trackStatusFlag && <ListItemButton className='list-button' onClick={() => openTrackStatus()}>
                 <Typography className='typo-Roboto-Medium-primary10-14'>{"Track Status"}</Typography>
             </ListItemButton>}
-            {/* <div style={{ marginRight: "14px" }}>
-                <MoreDropdown />
-            </div> */}
         </HeaderDiv>
         <div style={{ overflow: "auto" }}>
 

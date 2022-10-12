@@ -246,3 +246,11 @@ export const statusFullTagMenuItem = [
         typographycss: "typo-Roboto-Regoular-primary33-14"
     }
 ];
+export const options = [
+    {id: 1, key:"viewTask",label:'View Task'},
+    {id: 2, key:"editTask",label:'Edit Task'},
+    {id: 3, key:"reassignTask",label:'Reassign Task'},
+    {id: 4, key:"changeStatus",label:'Change Status'},
+    {id: 5, key:"markClaimSubmitted",label:'Mark claim submitted'},
+    {id: 5, key:"deleteTask",label:'Delete Task'}
+ ];

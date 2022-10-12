@@ -5,16 +5,19 @@ export const sideNavigation = [
     {
         id:1,
         label:"Task Manager",
+        path:'/',
         icon: <Taskselected />
     },
     {
         id:2,
         label:"Auditors",
+        path:'/auditors',
         icon: <Auditor />
     },
     {
         id:3,
         label:"Settings",
+        path:'/settings',
         icon: <Settings />
     },
 ]

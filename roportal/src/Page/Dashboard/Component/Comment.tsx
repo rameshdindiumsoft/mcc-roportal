@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { comments } from '../utils/contants';
 import '../../../Style/component/CommentStyle.css';
 import '../../../Style/component/Typography.css';
@@ -21,15 +19,11 @@ export default function Comment() {
     const [expanded, setExpanded] = React.useState<number | null>(null);
     const [replyText, setReplyText] = React.useState<string | null>(null);
     const [replyTextPrimary, setReplyTextPrimary] = React.useState<string | null>(null);
+    const [commentReplyId, setCommentReplyId] = React.useState<number | null>(null);
 
-    // const handleExpandClick = () => {
-    //     setExpanded(!expanded);
-    // };
-
-    // const ref: any = React.useRef();
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center",marginTop: 20}}>
-           <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: 10, overflow:"auto", marginBottom:"110px"}}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center",marginTop: 20, overflow:"scroll", marginBottom:"75px"}}>
+           <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: 10}}>
             {comments?.map((item, index) => (
                 <Card key={index} className='comment' elevation={0}>
                     <CardContent sx={{ display: "flex", flexDirection: "row", gap: 1.5 }}>
@@ -45,14 +39,21 @@ export default function Comment() {
                             <Typography className='typo-Roboto-Regoular-primary61-14'>{item?.date}</Typography>
                             <Typography className='typo-Roboto-Regoular-primary61-14'>{item?.time}</Typography>
                         </div>
-                        {(expanded !== index)  && <Button onClick={() => setExpanded(index)} variant='text' sx={{ textTransform: "initial" }}>
+                        {(expanded !== index && commentReplyId !== index)  && <Button onClick={() => setExpanded(index)} variant='text' sx={{ textTransform: "initial" }}>
                             <Typography className='typo-Roboto-Medium-primary8-14'>{"Reply"}</Typography>
                         </Button>}
                     </CardActions>
-                    {replyTextPrimary &&<CardContent>
-                        <div style={{ display: "flex", flexDirection: "row", gap: 10, marginLeft: 20 }}>
+                    {(commentReplyId === index && replyTextPrimary) &&<CardContent>
+                        <div style={{ display: "flex", flexDirection: "row",  marginLeft: 20, justifyContent:"space-between" }}>
+                            <div style={{display:"flex", flexDirection:"row", gap: 10,}}>
                             <Typography className='typo-Roboto-Regoular-primary61-14'>{"You"}</Typography>
                             <Typography className='typo-Roboto-Regoular-primary61-14'>{replyTextPrimary}</Typography>
+                            </div>
+                            <div>
+                            <Button onClick={() => setExpanded(index)} variant='text' sx={{ textTransform: "initial" }}>
+                            <Typography className='typo-Roboto-Medium-primary8-14'>{"Edit"}</Typography>
+                        </Button>
+                        </div>
                         </div>
                     </CardContent> }
                     <Collapse in={expanded === index} timeout="auto" unmountOnExit>
@@ -71,7 +72,8 @@ export default function Comment() {
                                             <InputAdornment position="start" sx={{ marginRight: 0 }}>
                                                 <IconButton size='small' onClick={() =>{
                                                         setReplyTextPrimary(replyText);
-                                                        setExpanded(null)
+                                                        setExpanded(null);
+                                                        setCommentReplyId(index);
                                                     }
                                                 }>
                                                     <Upload />

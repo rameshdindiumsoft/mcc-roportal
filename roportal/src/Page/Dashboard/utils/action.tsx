@@ -37,3 +37,21 @@ export const StatusTag = ({status}:StatusTagProps)=> {
         </div>
     )
 }
+
+export const menuHandle = (setModel: Function, setDialog: Function, setModelkey: Function, key: string) => {
+    if( key === 'successTask' || key === 'markSucess'){
+        setModelkey(key)
+        setDialog(true);
+    } else if(key === "deleteTask" || key === "markClaimSubmitted"){
+        setDialog(true);
+        setModelkey(key)
+    }else{
+        setModel(true);
+        setModelkey(key)
+    }
+}
+export const menuCloseHandle = (setModel: Function, setDialog: Function, setModelkey: Function) => {
+    setModel(false);
+    setDialog(false);
+    setModelkey('viewTask');
+}
