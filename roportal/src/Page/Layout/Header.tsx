@@ -41,7 +41,7 @@ const Header = () => {
                             display: { xs: 'none', md: 'flex' }
                         }}
                     >
-                        Admin Auditor
+                        Auditor Manager
                     </Typography>
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
@@ -55,7 +55,7 @@ const Header = () => {
                             flexGrow: 1
                         }}
                     >
-                        Admin Auditor
+                        Auditor Manager
                     </Typography>
                 </Toolbar>
                 <Box>

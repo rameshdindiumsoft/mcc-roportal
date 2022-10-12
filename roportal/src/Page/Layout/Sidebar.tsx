@@ -8,9 +8,14 @@ import { sideNavigation } from './utils/contants';
 import '../../Style/component/Typography.css';
 import '../../Style/component/ButtonStyle.css';
 import './utils/Sidebar.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Sidebar() {
 	const currentPath = window.location.pathname;
+	const navigate = useNavigate();
+	const navigationSidebar  = (path:string) => {
+		navigate(path)
+	}
 	return (
 		<div>
 			<div className='rootDiv'>
@@ -34,7 +39,7 @@ export default function Sidebar() {
 			</div>
 			<div className='rootDivPrimary4'>
 				{sideNavigation?.map((item) => (
-					<ListItemButton key={item.id} className={currentPath === item.path ?`buttonCurrent iconBtn`: `list-button iconBtn`}>
+					<ListItemButton key={item.id} className={currentPath === item.path ?`buttonCurrent iconBtn`: `list-button iconBtn`} onClick={() => navigationSidebar(item.path)}>
 						<Icon className='svgIcon iconTag'>{item.icon} </Icon>
 						<Typography className={currentPath === item.path ?`typo-Roboto-Regoular-primary10-16-21lh typoalign`:'typo-Roboto-Regoular-primary3-16-21lh hocss typoalign'}>{item.label}</Typography>
 					</ListItemButton>

@@ -9,6 +9,8 @@ function App() {
           <Routes>
             <Route element={<Mainlayout><Outlet /></Mainlayout>}>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/auditors" element={<Dashboard />} />
+              <Route path="/settings" element={<Dashboard />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
